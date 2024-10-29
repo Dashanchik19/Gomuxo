@@ -1,0 +1,408 @@
+@import "./addition/reset.css";
+:root {
+  --bg-general: rgba(238, 241, 251, 1);
+  --general-black: rgba(0, 0, 0, 1);
+  --general-blue: rgba(26, 29, 48, 1);
+  --general-white: rgba(255, 255, 255, 1);
+  --general-grey: rgba(204, 204, 204, 1);
+}
+
+@font-face {
+  font-family: "Arguedemo";
+  src: url(".././fonts/Arguedemo.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../fonts/Nexa-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../fonts/Nexa-XBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+.bg-general {
+  background-color: var(--bg-general);
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[class*=__container] {
+  max-width: 1420px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 100px;
+  background-color: var(--bg-general);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nexa", sans-serif;
+  font-weight: 400;
+}
+.header__container {
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .header__container {
+    max-width: 1000px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 992px) {
+  .header__container {
+    max-width: 800px;
+    padding: 0 15px;
+  }
+}
+.header__blocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(1.25rem, 0.139rem + 5.56vw, 5rem);
+  gap: 82px;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .header__right {
+    gap: 30px;
+  }
+}
+.header__logo {
+  max-width: 125px;
+  width: 100%;
+  margin-right: 30px;
+}
+.header__btn {
+  max-width: 165px;
+  height: clamp(2.813rem, 2.627rem + 0.93vw, 3.438rem);
+  width: 100%;
+  color: var(--general-black);
+  border: 1px solid var(--general-blue);
+  font-family: Nexa;
+  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-weight: 400;
+  line-height: 21.6px;
+  color: var(--general-black);
+  font-weight: 800;
+  background-color: transparent;
+  border-radius: 7px;
+}
+@media (max-width: 1200px) {
+  .header__btn {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .header__btn {
+    font-size: 14px;
+    max-width: 130px;
+  }
+}
+.header__burger {
+  max-width: 37px;
+  width: 100%;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.5s ease-in-out;
+}
+@media (max-width: 768px) {
+  .header__burger {
+    display: flex;
+  }
+}
+.header__burger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--general-blue);
+  border-radius: 9px;
+  transition: all 0.25s ease-in-out;
+  left: 0;
+  opacity: 1;
+}
+.header__burger span:nth-child(1) {
+  top: 0px;
+}
+.header__burger span:nth-child(2) {
+  top: 10px;
+}
+.header__burger span:nth-child(3) {
+  top: 20px;
+}
+.header__burger span:nth-child(4) {
+  top: 30px;
+  width: 100%;
+}
+.header__burger.active span:nth-child(1) {
+  top: 12px;
+  width: 0;
+  left: 50%;
+}
+.header__burger.active span:nth-child(2) {
+  transform: rotate(45deg);
+  top: 12px;
+}
+.header__burger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+.menu__list {
+  display: flex;
+  align-items: center;
+  gap: 82px;
+}
+@media (max-width: 1200px) {
+  .menu__list {
+    font-size: 16px;
+    gap: 60px;
+  }
+}
+@media (max-width: 992px) {
+  .menu__list {
+    font-size: 14px;
+    gap: 30px;
+  }
+}
+.menu__link {
+  font-family: Nexa;
+  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-weight: 400;
+  line-height: 21.6px;
+  color: var(--general-black);
+}
+
+.main {
+  position: relative;
+  height: 1270px;
+  min-height: 100vh;
+  padding-top: 75px;
+  border: 2px dashed #222222;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .main {
+    height: 100vh;
+  }
+}
+.main__container {
+  position: relative;
+  height: 100%;
+  z-index: 9;
+}
+.main__container .picture-girl {
+  position: absolute;
+  content: "";
+  left: 15px;
+  top: 95px;
+  background-image: url("../img/main-girl.png");
+  max-width: 420px;
+  width: 100%;
+  height: 900px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;
+}
+@media (max-width: 1200px) {
+  .main__container .picture-girl {
+    top: 70px;
+    height: 700px;
+    max-width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .main__container .picture-girl {
+    display: none;
+  }
+}
+.main__container .picture-boy {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/main-man.png");
+  max-width: 600px;
+  width: 100%;
+  height: 720px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;
+}
+@media (max-width: 1550px) {
+  .main__container .picture-boy {
+    max-width: 520px;
+    height: 600px;
+  }
+}
+@media (max-width: 1200px) {
+  .main__container .picture-boy {
+    bottom: 280px;
+    height: 450px;
+    max-width: 480px;
+  }
+}
+@media (max-width: 768px) {
+  .main__container .picture-boy {
+    display: none;
+  }
+}
+.main__title {
+  font-size: clamp(1.875rem, 0.949rem + 4.63vw, 5rem);
+  font-family: "Arguedemo", sans-serif;
+  font-weight: 400;
+  line-height: clamp(3.125rem, 2.421rem + 3.52vw, 5.5rem);
+  max-width: 750px;
+  width: 100%;
+  display: flex;
+  margin: 0 20%;
+}
+@media (max-width: 992px) {
+  .main__title {
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+.main__buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(2.188rem, 0.984rem + 6.02vw, 6.25rem);
+  gap: 30px;
+  padding: 0 20px;
+  margin-left: -20px;
+  z-index: 9;
+}
+@media (max-width: 768px) {
+  .main__buttons {
+    padding-bottom: 300px;
+  }
+}
+.main__buttons::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0px;
+  background-image: url("../img/main-decoration-circle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55rem;
+  max-width: 900px;
+  width: 100%;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .main__buttons::before {
+    display: none;
+  }
+}
+.main__buttons button {
+  background-color: transparent;
+  border: 1px solid rgb(26, 29, 48);
+  max-width: clamp(7.5rem, 6.296rem + 6.02vw, 11.563rem);
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  font-family: "Nexa", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  z-index: 9;
+}
+.main__buttons button.active {
+  background: rgb(246, 86, 6);
+  border: none;
+  color: var(--general-white);
+}
+
+.below-blocks {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: 900px;
+  width: 100%;
+  background-color: var(--general-blue);
+  height: 290px;
+  border-radius: 0px 6px 6px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 99;
+}
+@media (max-width: 1500px) {
+  .below-blocks {
+    max-width: 750px;
+  }
+}
+@media (max-width: 1200px) {
+  .below-blocks {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+}
+.below-blocks span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60%;
+  opacity: 0.5;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9568627451);
+  border-radius: 100%;
+}
+.below-blocks__content {
+  color: var(--general-white);
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+.below-blocks__content h1 {
+  font-size: 90px;
+  font-family: "Arguedemo", sasn-serif;
+  font-weight: 400;
+  line-height: 99px;
+}
+@media (max-width: 1200px) {
+  .below-blocks__content h1 {
+    font-size: clamp(2.5rem, 2.037rem + 2.31vw, 4.063rem);
+    line-height: clamp(2.813rem, 2.35rem + 2.31vw, 4.375rem);
+  }
+}
+.below-blocks__content p {
+  font-family: Nexa;
+  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-weight: 400;
+  line-height: 21.6px;
+  color: var(--general-black);
+  color: var(--general-white);
+  font-size: clamp(0.75rem, 0.694rem + 0.28vw, 0.938rem);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,170 @@
+.main 
+    position: relative
+    height: 1270px
+    min-height: 100vh
+    padding-top: 75px
+    border: 2px dashed #222222
+    overflow: hidden
+    @media (max-width: 768px)
+       height: 100vh
+        // height: 0
+
+    &__container
+        position: relative
+        height: 100%
+        z-index: 9
+        .picture-girl 
+            position: absolute
+            content: ""
+            left: 15px
+            top: 95px
+            background-image: url("../img/main-girl.png")
+            max-width: 420px
+            width: 100%
+            height: 900px
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            z-index: 99
+            @media (max-width: 1200px)
+                top: 70px
+                height: 700px
+                max-width: 300px
+            @media (max-width: 768px)
+                display: none
+
+        .picture-boy 
+            position: absolute
+            content: ""
+            right: 0
+            bottom: 0
+            background-image: url("../img/main-man.png")
+            max-width: 600px
+            width: 100%
+            height: 720px
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            z-index: 99   
+            @media (max-width:1550px)
+                max-width: 520px
+                height: 600px
+            @media (max-width: 1200px)
+                bottom: 280px
+                height: 450px
+                max-width: 480px
+            @media (max-width: 768px)
+                display: none
+    
+    &__title 
+        font-size: clamp(1.875rem, 0.949rem + 4.63vw, 5rem)
+        font-family: "Arguedemo", sans-serif
+        font-weight: 400
+        //88 = 50
+        line-height: clamp(3.125rem, 2.421rem + 3.52vw, 5.5rem)
+        max-width: 750px
+        width: 100%
+        display: flex
+        margin: 0 20%
+        
+        @media (max-width: 992px)
+            margin: 0 auto
+            text-align: left
+    &__buttons
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: clamp(2.188rem, 0.984rem + 6.02vw, 6.25rem)
+        gap: 30px
+        padding: 0 20px
+        margin-left: -20px
+        z-index: 9
+        @media (max-width: 768px)
+            padding-bottom: 300px
+        
+        &::before
+            position: absolute
+            content: ""
+            top: 0
+            right: 0px
+            background-image: url("../img/main-decoration-circle.png")
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            height: 55rem
+            max-width: 900px
+            width: 100%
+            z-index: 1
+            @media (max-width: 768px)
+                display: none
+                
+        button
+            background-color: transparent
+            border: 1px solid rgba(26, 29, 48, 1)
+            max-width: clamp(7.5rem, 6.296rem + 6.02vw, 11.563rem)
+            // max-width: 185px
+            width: 100%
+            height: 60px
+            border-radius: 10px
+            font-family: "Nexa", sans-serif
+            font-size: 18px
+            font-weight: 700
+            transition: all 0.3s ease-in-out
+            z-index: 9
+            &.active 
+                background: rgba(246, 86, 6, 1)
+                border: none
+                color: var(--general-white)
+            
+
+.below-blocks
+    position: absolute
+    left: 0
+    bottom: 0
+    max-width: 900px
+    width: 100%
+    background-color: var(--general-blue)
+    height: 290px
+    border-radius: 0px 6px 6px 0px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    z-index: 99
+    @media (max-width:1500px)
+        max-width: 750px
+
+    @media (max-width: 1200px)
+        max-width: 100%
+        width: 100%
+        text-align: center
+    span 
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        height: 60%
+        opacity: 0.5
+        background-color: #ffffff
+        border: 1px solid #fffffff4
+        border-radius: 100% 
+
+    &__content
+        color: var(--general-white)
+        max-width: 280px
+        width: 100%
+        height: auto
+        h1 
+            font-size: 90px
+            font-family: "Arguedemo", sasn-serif
+            font-weight: 400
+            line-height: 99px
+            @media (max-width: 1200px)
+                font-size: clamp(2.5rem, 2.037rem + 2.31vw, 4.063rem)
+                line-height: clamp(2.813rem, 2.35rem + 2.31vw, 4.375rem)
+        
+        p
+            @include  general-style-text
+            color: var(--general-white)
+            font-size: clamp(0.75rem, 0.694rem + 0.28vw, 0.938rem)
+
+
