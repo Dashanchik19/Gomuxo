@@ -210,10 +210,50 @@
     height: 100vh;
   }
 }
+.main::before {
+  position: absolute;
+  left: 8.2%;
+  top: 315px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(135, 160, 226);
+  border-radius: 50%;
+}
+.main::after {
+  position: absolute;
+  right: 10.2%;
+  top: 190px;
+  content: "";
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid rgb(246, 186, 124);
+}
 .main__container {
   position: relative;
   height: 100%;
   z-index: 9;
+}
+.main__container::before {
+  position: absolute;
+  left: 1.1%;
+  top: 141px;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: rgb(186, 122, 210);
+  border-radius: 50%;
+}
+.main__container::after {
+  position: absolute;
+  right: 4.9%;
+  top: 310px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(186, 122, 210);
+  border-radius: 50%;
 }
 .main__container .picture-girl {
   position: absolute;
@@ -281,12 +321,13 @@
   max-width: 750px;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 20%;
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .main__title {
     margin: 0 auto;
-    text-align: left;
   }
 }
 .main__buttons {
@@ -295,15 +336,10 @@
   justify-content: center;
   align-items: center;
   margin-top: clamp(2.188rem, 0.984rem + 6.02vw, 6.25rem);
-  gap: 30px;
+  gap: clamp(0.938rem, 0.66rem + 1.39vw, 1.875rem);
   padding: 0 20px;
   margin-left: -20px;
   z-index: 9;
-}
-@media (max-width: 768px) {
-  .main__buttons {
-    padding-bottom: 300px;
-  }
 }
 .main__buttons::before {
   position: absolute;
@@ -331,11 +367,19 @@
   width: 100%;
   height: 60px;
   border-radius: 10px;
-  font-family: "Nexa", sans-serif;
-  font-size: 18px;
+  font-family: Nexa;
+  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-weight: 400;
+  line-height: 21.6px;
+  color: var(--general-black);
   font-weight: 700;
   transition: all 0.3s ease-in-out;
   z-index: 9;
+}
+@media (max-width: 768px) {
+  .main__buttons button {
+    padding: 0 5px;
+  }
 }
 .main__buttons button.active {
   background: rgb(246, 86, 6);
@@ -350,7 +394,7 @@
   max-width: 900px;
   width: 100%;
   background-color: var(--general-blue);
-  height: 290px;
+  height: clamp(11.25rem, 9.213rem + 10.19vw, 18.125rem);
   border-radius: 0px 6px 6px 0px;
   display: flex;
   justify-content: space-around;

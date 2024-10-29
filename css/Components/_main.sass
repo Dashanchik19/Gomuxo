@@ -7,12 +7,48 @@
     overflow: hidden
     @media (max-width: 768px)
        height: 100vh
-        // height: 0
+    &::before
+        position: absolute
+        left: 8.2%
+        top: 315px
+        content: ""
+        width: 10px
+        height: 10px
+        background-color: rgba(135, 160, 226, 1)
+        border-radius: 50%
 
+    &::after
+        position: absolute
+        right: 10.2%
+        top: 190px
+        content: ""
+        width: 38px
+        height: 38px
+        border-radius: 50%
+        border: 3px solid rgba(246, 186, 124, 1)
     &__container
         position: relative
         height: 100%
         z-index: 9
+        &::before
+             position: absolute
+             left: 1.1%
+             top: 141px
+             content: ""
+             width: 18px
+             height: 18px
+             background-color: rgba(186, 122, 210, 1)
+             border-radius: 50%
+        &::after
+                position: absolute
+                right: 4.9%
+                top: 310px
+                content: ""
+                width: 10px
+                height: 10px
+                background-color: rgba(186, 122, 210, 1)
+                border-radius: 50%
+
         .picture-girl 
             position: absolute
             content: ""
@@ -65,23 +101,26 @@
         max-width: 750px
         width: 100%
         display: flex
+        justify-content: center
+        align-items: center
         margin: 0 20%
         
-        @media (max-width: 992px)
+        @media (max-width: 1200px)
             margin: 0 auto
-            text-align: left
+            // text-align: left
     &__buttons
         position: relative
         display: flex
         justify-content: center
         align-items: center
         margin-top: clamp(2.188rem, 0.984rem + 6.02vw, 6.25rem)
-        gap: 30px
+        gap: clamp(0.938rem, 0.66rem + 1.39vw, 1.875rem)
         padding: 0 20px
         margin-left: -20px
         z-index: 9
         @media (max-width: 768px)
-            padding-bottom: 300px
+            // padding-bottom: 300px
+
         
         &::before
             position: absolute
@@ -103,15 +142,15 @@
             background-color: transparent
             border: 1px solid rgba(26, 29, 48, 1)
             max-width: clamp(7.5rem, 6.296rem + 6.02vw, 11.563rem)
-            // max-width: 185px
             width: 100%
             height: 60px
             border-radius: 10px
-            font-family: "Nexa", sans-serif
-            font-size: 18px
+            @include general-style-text
             font-weight: 700
             transition: all 0.3s ease-in-out
             z-index: 9
+            @media (max-width: 768px)
+                padding: 0 5px
             &.active 
                 background: rgba(246, 86, 6, 1)
                 border: none
@@ -125,7 +164,7 @@
     max-width: 900px
     width: 100%
     background-color: var(--general-blue)
-    height: 290px
+    height: clamp(11.25rem, 9.213rem + 10.19vw, 18.125rem)
     border-radius: 0px 6px 6px 0px
     display: flex
     justify-content: space-around
