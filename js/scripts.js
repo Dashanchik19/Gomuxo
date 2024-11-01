@@ -29,6 +29,7 @@ document.addEventListener("click", (event) => {
 // =======================
 
 function linkAction() {
+  btnsSpan.forEach((btnSpan) => (btnSpan.style.background = "#1a1d30"));
   menu.classList.remove("active");
 }
 
