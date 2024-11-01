@@ -29,8 +29,9 @@ document.addEventListener("click", (event) => {
 // =======================
 
 function linkAction() {
+  menu.classList.toggle("active");
+  btn.classList.toggle("active");
   btnsSpan.forEach((btnSpan) => (btnSpan.style.background = "#1a1d30"));
-  menu.classList.remove("active");
 }
 
 menuElements.forEach((e) => e.addEventListener("click", linkAction));
@@ -41,8 +42,6 @@ let mainBtns = document.querySelectorAll(".main__btn");
 
 mainBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    mainBtns.forEach((btn) => btn.classList.remove("active"));
-
     btn.classList.add("active");
   });
 });
