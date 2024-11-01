@@ -42,6 +42,81 @@ let mainBtns = document.querySelectorAll(".main__btn");
 
 mainBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    // Remove 'active' class from all buttons
+    mainBtns.forEach((button) => button.classList.remove("active"));
+
+    // Add 'active' class to the clicked button
     btn.classList.add("active");
   });
+});
+
+// =======================
+//! Плавна поява меню при прокручуванні користувачем
+
+const bgHeader = () => {
+  const header = document.querySelector("header");
+
+  if (window.scrollY >= 200) {
+    header.classList.add("bg-header");
+  } else {
+    header.classList.remove("bg-header");
+  }
+};
+
+window.addEventListener("scroll", bgHeader);
+
+// Викликаємо функцію для первісної ініціалізації
+bgHeader();
+
+//! Modal form
+
+let modalBtn = document.querySelector(".header__btn");
+
+function modalView(event) {
+  let modal = document.querySelector(".registration-form");
+  let closeModal = document.querySelector(".register__close");
+  let body = document.body;
+
+  // Тоглуємо клас для модального вікна
+  modal.classList.toggle("modal-register");
+
+  // Перевіряємо, чи модальне вікно активне, і додаємо/видаляємо клас для заборони скролу
+  if (modal.classList.contains("modal-register")) {
+    body.classList.add("no-scroll");
+
+    // Додаємо обробник події для закриття модального вікна
+    closeModal.addEventListener("click", closeModalHandler);
+  } else {
+    body.classList.remove("no-scroll");
+
+    // Видаляємо обробник події, коли модальне вікно закрите
+    closeModal.removeEventListener("click", closeModalHandler);
+  }
+}
+
+// Функція для закриття модального вікна
+function closeModalHandler() {
+  let modal = document.querySelector(".registration-form");
+  let body = document.body;
+
+  modal.classList.remove("modal-register");
+  body.classList.remove("no-scroll");
+
+  // Видаляємо обробник події, щоб уникнути дублювання
+  closeModal.removeEventListener("click", closeModalHandler);
+}
+
+// Додаємо подію до кнопки відкриття модального вікна
+modalBtn.addEventListener("click", modalView);
+
+// Додаємо обробник події для закриття модального вікна при кліку поза його межами
+window.addEventListener("click", function (event) {
+  let modal = document.querySelector(".registration-form");
+  if (
+    modal.classList.contains("modal-register") &&
+    !modal.contains(event.target) &&
+    !modalBtn.contains(event.target)
+  ) {
+    closeModalHandler();
+  }
 });

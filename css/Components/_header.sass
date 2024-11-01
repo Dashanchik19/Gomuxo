@@ -6,6 +6,24 @@
   justify-content: center
   font-family: 'Nexa', sans-serif
   font-weight: 400
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  transition: all 0.8s ease-in-out
+  z-index: 99
+  &.bg-header
+    position: fixed
+    left: 0
+    top: 0
+    width: 100% 
+    animation: bg-header .8s forwards
+    @keyframes bg-header
+        from
+          top: -250px
+        to
+          top: 0
+          box-shadow: 0px 7px 10px -5px rgba(100, 100, 111, 0.2)  
 
   &__container
     position: relative
@@ -141,6 +159,25 @@
       color: #fff
       row-gap: 3.5rem
 
+  &__item
+    position: relative
+    transition: all 0.3s ease-in-out
+    &:hover
+      transform: translateY(-3px)
+    &::before
+      position: absolute
+      content: ""
+      top: -10px
+      border-radius: 100%
+      left: 50%
+      transform: translateX(-50%)
+      background-color: #707275
+      transition: all 0.3s ease-in-outW
+    &:hover::before
+        width: 8px
+        height: 8px
+        border-radius: 100%
+      
   &__link
     @include general-style-text
     @media (max-width: 768px)
