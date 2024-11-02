@@ -39,6 +39,20 @@
   max-width: 1420px;
   padding: 0 20px;
   margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  [class*=__container] {
+    max-width: 1000px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 992px) {
+  [class*=__container] {
+    max-width: 800px;
+    padding: 0 15px;
+  }
 }
 
 .header {
@@ -118,7 +132,7 @@
   color: var(--general-black);
   border: 1px solid var(--general-blue);
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
@@ -267,7 +281,7 @@
 }
 .menu__link {
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
@@ -450,7 +464,7 @@
   height: 60px;
   border-radius: 10px;
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
@@ -525,7 +539,7 @@
 }
 .below-blocks__content p {
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
@@ -537,19 +551,55 @@
   position: relative;
   background-color: rgb(244, 245, 252);
   padding-top: 204px;
-  padding-bottom: 128px;
+  min-height: 100vh;
+}
+@media (max-width: 768px) {
+  .about {
+    padding-top: 100px;
+  }
 }
 .about__picture-man {
   position: absolute;
   content: "";
   bottom: 0px;
   left: 0;
-  max-width: 40vw;
+  max-width: 45vw;
+}
+@media (max-width: 768px) {
+  .about__picture-man {
+    position: relative;
+  }
+}
+@media (max-width: 768px) {
+  .about__picture-man {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 95%;
+  }
+}
+.about__left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .about__blocks {
   display: flex;
   column-gap: 95px;
   font-family: "Arguedemo", sans-serif;
+}
+@media (max-width: 992px) {
+  .about__blocks {
+    column-gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .about__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .about__title {
   max-width: 533px;
@@ -558,15 +608,36 @@
   font-weight: 400;
   line-height: 66px;
 }
+@media (max-width: 1200px) {
+  .about__title {
+    font-size: 45px;
+  }
+}
+@media (max-width: 992px) {
+  .about__title {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
 .about__descript {
   max-width: 495px;
   width: 100%;
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
   color: var(--general-black);
+}
+@media (max-width: 1200px) {
+  .about__descript {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .about__descript {
+    font-size: 13px;
+  }
 }
 
 .services {
@@ -575,9 +646,38 @@
   max-width: 650px;
   width: 100%;
 }
+@media (max-width: 1320px) {
+  .services {
+    max-width: 500px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1200px) {
+  .services {
+    max-width: 450px;
+  }
+}
+@media (max-width: 992px) {
+  .services {
+    max-width: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .services {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .services__item {
   border-top: 1px solid rgb(0, 0, 0);
-  width: 100%;
+}
+.services__item:not(:last-child) {
+  padding-bottom: 54px;
+}
+@media (max-width: 992px) {
+  .services__item:not(:last-child) {
+    padding-bottom: 20px;
+  }
 }
 .services__link {
   display: flex;
@@ -588,11 +688,16 @@
 .services__link-text {
   margin-left: 92px;
   font-family: Nexa;
-  font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem);
+  font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: var(--general-black);
   font-size: 20px;
+}
+@media (max-width: 1200px) {
+  .services__link-text {
+    font-size: 15px;
+  }
 }
 .services__icon {
   padding: 20px;
@@ -602,6 +707,12 @@
   font-size: 25px;
   transform: rotate(-45deg);
   font-weight: 700;
+}
+@media (max-width: 1200px) {
+  .services__icon {
+    padding: 15px;
+    font-size: 15px;
+  }
 }
 .services__name {
   display: flex;
@@ -614,9 +725,25 @@
   font-size: 30px;
   line-height: 33px;
 }
+@media (max-width: 1200px) {
+  .services__name span {
+    font-size: 25px;
+  }
+}
 .services__name h2 {
   font-size: 40px;
   line-height: 44px;
+}
+@media (max-width: 1200px) {
+  .services__name h2 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 557px) {
+  .services__name h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
 }
 
 .registration-form {

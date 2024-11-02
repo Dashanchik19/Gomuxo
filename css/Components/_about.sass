@@ -1,53 +1,93 @@
 .about
     position: relative
-    // min-height: 100%
     background-color:  rgba(244, 245, 252, 1)
     padding-top: 204px
-    padding-bottom: 128px
+    min-height: 100vh
+    @media (max-width: 768px)
+        padding-top: 100px
     &__picture-man
         position: absolute
         content: ""
         bottom: 0px
         left: 0
-        max-width: 40vw
-
+        max-width: 45vw
+        @media (max-width: 768px)
+            position: relative
+        @media (max-width: 768px)
+            margin-top: 30px
+            width: 100%
+            max-width: 95%
+    &__left
+        display: flex
+        flex-direction: column
+        gap: 30px
+        
     &__blocks
         display: flex
         column-gap: 95px
         font-family: "Arguedemo", sans-serif
+        @media (max-width:992px)
+            column-gap: 50px
+        @media (max-width: 768px)
+            display: flex
+            flex-direction: column
+            gap: 60px
+            width: 100%
+            max-width: 100%
     &__title
         max-width: 533px
         width: 100%
         font-size: 60px
         font-weight: 400
         line-height: 66px
-        // margin-bottom: 38px
+        @media (max-width:1200px)
+            font-size: 45px
+        @media (max-width:992px)
+            font-size: 38px
+            line-height: 50px        
     &__descript
         max-width: 495px
         width: 100%
         @include general-style-text
         color: var(--general-black)
-        // margin-bottom: 170px
+        @media (max-width:1200px)
+            font-size: 16px
+        @media (max-width:992px)
+            font-size: 13px
+
 
 .services
     display: flex
     flex-direction: column
     max-width: 650px
     width: 100%
+    @media (max-width: 1320px)
+        max-width: 500px
+        justify-content: space-between
+    @media (max-width:1200px)
+        max-width: 450px
+    @media (max-width:992px)
+        max-width: 350px
+    @media (max-width: 768px)
+        width: 100%
+        max-width: 100%
     &__item
         border-top: 1px solid rgba(0, 0, 0, 1)
-        width: 100%
+        &:not(:last-child)
+            padding-bottom: 54px
+            @media (max-width:992px)
+                padding-bottom: 20px
     &__link
         display: flex
         align-items: center
         justify-content: space-between    
         margin-top: 32px
-            
     &__link-text
         margin-left: 92px
-        // margin-top: 32px
         @include general-style-text
         font-size: 20px
+        @media (max-width:1200px)
+            font-size: 15px
     &__icon 
         padding: 20px
         border-radius: 100%
@@ -56,18 +96,30 @@
         font-size: 25px
         transform: rotate(-45deg)
         font-weight: 700
+        @media (max-width:1200px)
+            padding: 15px
+            font-size: 15px
     &__name
         display: flex
         gap: 44px
         margin-top: 32px
+        
         span
             color: rgba(246, 86, 6, 1)
             font-weight: 400
             font-size: 30px
             line-height: 33px
+            @media (max-width:1200px)
+                font-size: 25px
         h2
             font-size: 40px
             line-height: 44px
+            @media (max-width:1200px)
+                font-size: 35px
+            @media (max-width: 557px)
+                font-size: 25px
+                line-height: 35px
+
     
 
 

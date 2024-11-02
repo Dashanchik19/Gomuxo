@@ -1,7 +1,16 @@
 @mixin general-style-text
     font-family: Nexa
-    font-size: clamp(1rem, 0.963rem + 0.19vw, 1.125rem)
+    // 1200 = 16px
+    font-size: 18px 
     font-weight: 400
     line-height: 21.6px
     color: var(--general-black)
 
+
+@mixin general-style-title
+    font-family: "Arguedemo", sans-serif
+    //60 - 1200px = 35
+    font-size: 60px
+    font-weight: 400
+    line-height: 66px
+    color: var(--general-blue)
